@@ -503,7 +503,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 183817804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1070860150}
+        m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
+        m_MethodName: roulette3_stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &340869854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,10 +1256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306903bb06e78cb44b80a6508597f1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotspeed: 100
-  rolette1: {fileID: 419027776}
-  rolette2: {fileID: 1712254139}
-  rolette3: {fileID: 1357737796}
+  rot1speed: 100
+  rot2speed: 100
+  rot3speed: 100
+  roulette1: {fileID: 419027776}
+  roulette2: {fileID: 1712254139}
+  roulette3: {fileID: 1357737796}
 --- !u!1 &1188013092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,7 +1350,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357737796}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.568895, y: -0.5503572, z: 218.33061}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1}
   m_Children: []
@@ -1708,7 +1722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632836013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1070860150}
+        m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
+        m_MethodName: roulette2_stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1700197554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,7 +2402,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7155401831118169392}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1070860150}
+        m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
+        m_MethodName: roulette1_stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &7155401831118169394
 RectTransform:
   m_ObjectHideFlags: 0

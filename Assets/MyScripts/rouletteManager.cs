@@ -5,14 +5,14 @@ using UnityEngine;
 public class rouletteManager : MonoBehaviour
 {
     [SerializeField]
-    private float rotspeed = 100;
-    private int stop = 0;
-    private bool rotflag = false;
-    private float angl = 0;
+    private float rot1speed = 100, rot2speed = 100, rot3speed = 100;
+    private int stop1 = 0, stop2 = 0, stop3 = 0;
+    private bool rot1flag = false, rot2flag = false, rot3flag = false;
+    private float angl1 = 0, angl2 = 0, angl3 = 0;
 
-    public GameObject rolette1;
-    public GameObject rolette2;
-    public GameObject rolette3;
+    public GameObject roulette1;
+    public GameObject roulette2;
+    public GameObject roulette3;
 
     // Start is called before the first frame update
     void Start()
@@ -23,44 +23,112 @@ public class rouletteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetMouseButtonDown(0) && rotflag == false)
+        //ルーレット１の挙動
+        if(rot1flag == false)
         {
-            this.rotspeed = 100;
-            rotflag = true;
+            roulette1.transform.Rotate(0, 0, rot1speed);
         }
-        */
-        rolette1.transform.Rotate(0, 0, rotspeed);
-        rolette2.transform.Rotate(0, 0, rotspeed);
-        rolette3.transform.Rotate(0, 0, rotspeed);
-
-        /*
-        rotspeed *= 0.98f;
-        transform.Rotate(0, 0, this.rotspeed);
-        stop = (int)(rotspeed * 100);
-
-        if (stop == 0 && rotflag == true)
+        else
         {
-            Debug.Log("stop");
-            rotflag = false;
-            angl = this.transform.eulerAngles.z;
-            if (angl >= 0 && angl < 90)
+            rot1speed *= 0.98f;
+            roulette1.transform.Rotate(0, 0, rot1speed);
+        }
+        //ルーレット２の挙動
+        if (rot2flag == false)
+        {
+            roulette2.transform.Rotate(0, 0, rot2speed);
+        }
+        else
+        {
+            rot2speed *= 0.98f;
+            roulette2.transform.Rotate(0, 0, rot2speed);
+        }
+        //ルーレット３の挙動
+        if (rot3flag == false)
+        {
+            roulette3.transform.Rotate(0, 0, rot3speed);
+        }
+        else
+        {
+            rot3speed *= 0.98f;
+            roulette3.transform.Rotate(0, 0, rot3speed);
+        }
+
+        stop1 = (int)(rot1speed * 100);
+        stop2 = (int)(rot2speed * 100);
+        stop3 = (int)(rot3speed * 100);
+
+        if (stop1 == 0 && rot1flag == true)
+        {
+            angl1 = roulette1.transform.eulerAngles.z;
+            if (angl1 >= 0 && angl1 < 90)
             {
-                Debug.Log("A");
+                Debug.Log("cherry");
             }
-            else if (angl >= 90 && angl < 180)
+            else if (angl1 >= 90 && angl1 < 180)
             {
-                Debug.Log("B");
+                Debug.Log("banana");
             }
-            else if (angl >= 180 && angl < 270)
+            else if (angl1 >= 180 && angl1 < 270)
             {
-                Debug.Log("C");
+                Debug.Log("apple");
             }
             else
             {
-                Debug.Log("D");
+                Debug.Log("grape");
             }
         }
-        */
+
+        if (stop2 == 0 && rot2flag == true)
+        {
+            angl2 = roulette2.transform.eulerAngles.z;
+            if (angl2 >= 0 && angl2 < 90)
+            {
+                Debug.Log("2");
+            }
+            else if (angl2 >= 90 && angl2 < 180)
+            {
+                Debug.Log("4");
+            }
+            else if (angl2 >= 180 && angl2 < 270)
+            {
+                Debug.Log("6");
+            }
+            else
+            {
+                Debug.Log("8");
+            }
+        }
+
+        if(stop3 == 0 && rot3flag == true)
+        {
+            angl3 = roulette3.transform.eulerAngles.z;
+            if(angl3 > 180 && angl3 <= 317.3)
+            {
+                Debug.Log("60s");
+            }else if(angl3 > 38.5 && angl3 <= 180)
+            {
+                Debug.Log("40s");
+            }
+            else
+            {
+                Debug.Log("20s");
+            }
+        }
+    }
+
+    public void roulette1_stop()
+    {
+        rot1flag = true;
+    }
+
+    public void roulette2_stop()
+    {
+        rot2flag = true;
+    }
+
+    public void roulette3_stop()
+    {
+        rot3flag = true;
     }
 }
