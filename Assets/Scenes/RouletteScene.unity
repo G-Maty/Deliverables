@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 183817802}
   - component: {fileID: 183817801}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,10 +507,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1070860150}
         m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
         m_MethodName: roulette3_stop
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 183817799}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1505,7 +1505,7 @@ GameObject:
   - component: {fileID: 1632836011}
   - component: {fileID: 1632836010}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,10 +1726,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1070860150}
         m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
         m_MethodName: roulette2_stop
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1632836008}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2406,10 +2406,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1070860150}
         m_TargetAssemblyTypeName: rouletteManager, Assembly-CSharp
         m_MethodName: roulette1_stop
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 7155401831118169395}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 1514883270313342696}
   - component: {fileID: 7155401831118169407}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -117,18 +117,21 @@ public class rouletteManager : MonoBehaviour
         }
     }
 
-    public void roulette1_stop()
+    public void roulette1_stop(GameObject obj)
     {
         rot1flag = true;
+        obj.SetActive(false);
     }
 
-    public void roulette2_stop()
+    public void roulette2_stop(GameObject obj)
     {
         rot2flag = true;
+        obj.SetActive(false);
     }
 
-    public void roulette3_stop()
+    public void roulette3_stop(GameObject obj)
     {
         rot3flag = true;
+        obj.SetActive(false);
     }
 }
