@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RouletteScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ActionScene.unity
+    guid: 7af4d8cf8e7f27d4fb2bf9273c06a019
   m_configObjects: {}

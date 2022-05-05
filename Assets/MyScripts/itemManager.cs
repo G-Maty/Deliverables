@@ -5,18 +5,47 @@ using TMPro; //TextMeshProÇÃëÄçÏÇ…ïKóv
 
 public class itemManager : MonoBehaviour
 {
-    private string itemTag = "apple";
+    private string itemTag = "grape";
     private int itemnum = 5;
     private bool goalflag = false;
 
     [SerializeField]
     private TextMeshProUGUI itemnumgui;
+    
+    [SerializeField][Tooltip("apple")]
+    private GameObject appleUI;
+    [SerializeField][Tooltip("grape")]
+    private GameObject grapeUI;
+    [SerializeField][Tooltip("banana")]
+    private GameObject bananaUI;
+    [SerializeField][Tooltip("cherry")]
+    private GameObject cherryUI;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        itemTag = rouletteManager.fruitname;
+        itemnum = rouletteManager.amountitems;
         itemnumgui.text = itemnum.ToString();
+
+        if(itemTag == "apple")
+        {
+            appleUI.SetActive(true);
+        }
+        else if(itemTag == "grape")
+        {
+            grapeUI.SetActive(true);
+        }
+        else if(itemTag == "banana")
+        {
+            bananaUI.SetActive(true);
+        }
+        else
+        {
+            cherryUI.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +66,6 @@ public class itemManager : MonoBehaviour
                 if(itemnum == 0)
                 {
                     goalflag = true;
-                    Debug.Log("älìæ");
                 }
             }
         }

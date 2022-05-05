@@ -6,6 +6,8 @@ public class rouletteManager : MonoBehaviour
 {
     [SerializeField]
     private float rot1speed = 100, rot2speed = 100, rot3speed = 100;
+    [SerializeField]
+    private GameObject ConfirmWindow; //確認画面
     private int stop1 = 0, stop2 = 0, stop3 = 0;
     private bool rot1flag = false, rot2flag = false, rot3flag = false;
     private float angl1 = 0, angl2 = 0, angl3 = 0;
@@ -14,10 +16,15 @@ public class rouletteManager : MonoBehaviour
     public GameObject roulette2;
     public GameObject roulette3;
 
+    //共有変数
+    public static string fruitname; //フルーツ名
+    public static int amountitems; //量
+    public static float timelimit; //制限時間
+
     // Start is called before the first frame update
     void Start()
     {
-
+        ConfirmWindow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,24 +65,29 @@ public class rouletteManager : MonoBehaviour
         stop2 = (int)(rot2speed * 100);
         stop3 = (int)(rot3speed * 100);
 
+        //結果表示
         if (stop1 == 0 && rot1flag == true)
         {
             angl1 = roulette1.transform.eulerAngles.z;
             if (angl1 >= 0 && angl1 < 90)
             {
                 Debug.Log("cherry");
+                fruitname = "cherry";
             }
             else if (angl1 >= 90 && angl1 < 180)
             {
                 Debug.Log("banana");
+                fruitname = "banana";
             }
             else if (angl1 >= 180 && angl1 < 270)
             {
                 Debug.Log("apple");
+                fruitname = "apple";
             }
             else
             {
                 Debug.Log("grape");
+                fruitname = "grape";
             }
         }
 
@@ -85,18 +97,22 @@ public class rouletteManager : MonoBehaviour
             if (angl2 >= 0 && angl2 < 90)
             {
                 Debug.Log("2");
+                amountitems = 2;
             }
             else if (angl2 >= 90 && angl2 < 180)
             {
                 Debug.Log("4");
+                amountitems = 4;
             }
             else if (angl2 >= 180 && angl2 < 270)
             {
                 Debug.Log("6");
+                amountitems = 6;
             }
             else
             {
                 Debug.Log("8");
+                amountitems = 8;
             }
         }
 
@@ -106,14 +122,22 @@ public class rouletteManager : MonoBehaviour
             if(angl3 > 180 && angl3 <= 317.3)
             {
                 Debug.Log("60s");
+                timelimit = 60f;
             }else if(angl3 > 38.5 && angl3 <= 180)
             {
                 Debug.Log("40s");
+                timelimit = 40f;
             }
             else
             {
                 Debug.Log("20s");
+                timelimit = 20f;
             }
+        }
+
+        if(stop1 == 0 && stop2 == 0 && stop3 == 0)
+        {
+            ConfirmWindow.SetActive(true);
         }
     }
 
