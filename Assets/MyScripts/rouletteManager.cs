@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class rouletteManager : MonoBehaviour
 {
@@ -11,6 +12,18 @@ public class rouletteManager : MonoBehaviour
     private int stop1 = 0, stop2 = 0, stop3 = 0;
     private bool rot1flag = false, rot2flag = false, rot3flag = false;
     private float angl1 = 0, angl2 = 0, angl3 = 0;
+    [SerializeField]
+    private TextMeshProUGUI amountUI;
+    [SerializeField]
+    private TextMeshProUGUI timeUI;
+    [SerializeField][Tooltip("apple")]
+    private GameObject appleUI;
+    [SerializeField][Tooltip("grape")]
+    private GameObject grapeUI;
+    [SerializeField][Tooltip("banana")]
+    private GameObject bananaUI;
+    [SerializeField][Tooltip("cherry")]
+    private GameObject cherryUI;
 
     public GameObject roulette1;
     public GameObject roulette2;
@@ -137,7 +150,28 @@ public class rouletteManager : MonoBehaviour
 
         if(stop1 == 0 && stop2 == 0 && stop3 == 0)
         {
+            roulette1.transform.Rotate(0, 0, 0);
+            roulette2.transform.Rotate(0, 0, 0);
+            roulette3.transform.Rotate(0, 0, 0);
             ConfirmWindow.SetActive(true);
+            amountUI.text = amountitems.ToString() + "Ç¬";
+            timeUI.text = "êßå¿éûä‘" + timelimit.ToString() + "s";
+            if (fruitname == "apple")
+            {
+                appleUI.SetActive(true);
+            }
+            else if (fruitname == "grape")
+            {
+                grapeUI.SetActive(true);
+            }
+            else if (fruitname == "banana")
+            {
+                bananaUI.SetActive(true);
+            }
+            else
+            {
+                cherryUI.SetActive(true);
+            }
         }
     }
 
