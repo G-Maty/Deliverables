@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 485005497}
   - component: {fileID: 485005500}
   m_Layer: 0
-  m_Name: Jack_Idle
+  m_Name: Finish_Jack
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1313,7 @@ Transform:
   m_LocalScale: {x: -5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &485005500
 BoxCollider2D:
@@ -8863,7 +8863,7 @@ Transform:
   - {fileID: 1610168886}
   - {fileID: 437758733}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1048211496
 GameObject:
@@ -8905,7 +8905,7 @@ Transform:
   - {fileID: 1504152009}
   - {fileID: 442380388}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1087181476
 PrefabInstance:
@@ -9171,7 +9171,7 @@ Transform:
   - {fileID: 650812284}
   - {fileID: 1087181477}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167785009
 GameObject:
@@ -9261,7 +9261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 474238, guid: fd9d58dbfb8f846f58b62a48334a0058, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10284,7 +10284,7 @@ Transform:
   - {fileID: 429768298}
   - {fileID: 1247944763}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1610168885
 PrefabInstance:

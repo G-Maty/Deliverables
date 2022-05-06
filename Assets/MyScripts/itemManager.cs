@@ -76,6 +76,7 @@ public class itemManager : MonoBehaviour
         {
             Debug.Log("ƒNƒŠƒA");
             anim.SetBool("finish", true);
+            FadeManager.Instance.LoadScene("ClearScene", 0.3f);
         }
 
     }

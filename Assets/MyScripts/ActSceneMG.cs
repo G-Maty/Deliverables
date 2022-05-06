@@ -28,5 +28,10 @@ public class ActSceneMG : MonoBehaviour
             // •¶Žš—ñ‚É•ÏŠ·‚µ‚Ä•\Ž¦
             timeUI.text = timer.ToString("0");
         }
+
+        if(timer < 0)
+        {
+            FadeManager.Instance.LoadScene("GameOverScene", 0.3f);
+        }
     }
 }
