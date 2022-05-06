@@ -8,6 +8,7 @@ public class itemManager : MonoBehaviour
     private string itemTag = "grape";
     private int itemnum = 5;
     private bool goalflag = false;
+    private Animator anim;
 
     [SerializeField]
     private TextMeshProUGUI itemnumgui;
@@ -26,6 +27,7 @@ public class itemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = transform.root.GetComponent<Animator>();
         itemTag = rouletteManager.fruitname;
         itemnum = rouletteManager.amountitems;
         itemnumgui.text = itemnum.ToString();
@@ -73,6 +75,7 @@ public class itemManager : MonoBehaviour
         if(collision.tag == "Finish" && goalflag == true)
         {
             Debug.Log("ÉNÉäÉA");
+            anim.SetBool("finish", true);
         }
 
     }
