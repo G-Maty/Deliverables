@@ -15,7 +15,7 @@ public class moveUnitychan : MonoBehaviour
     [SerializeField]
     private float runspeed = 10.0f; //走る最大速度
     [SerializeField]
-    private float jumpforce = 500f; //飛ぶために加える力
+    private float jumpforce = 700f; //飛ぶために加える力
     private bool jumpflag = false;
 
     //接地判定(プレイヤー側の読み込み)
