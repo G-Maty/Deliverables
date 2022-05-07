@@ -9,18 +9,30 @@ using UnityEngine;
 public class moveUnitychan : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float ix = 0; //Horizontalキーの入力結果を保持(-1 ～ 1)
-    private float iy = 0; //Jumpキーの入力結果を保持(-1 ～ 1)
     private Animator anim;
     [SerializeField]
     private float runspeed = 10.0f; //走る最大速度
     [SerializeField]
-    private float jumpforce = 700f; //飛ぶために加える力
+    private float jumpspeed = 80f; //ジャンプするスピード
+    [SerializeField]
+    private float gravity;
     private bool jumpflag = false;
+    private float jumpPos = 0.0f; //ジャンプした場所を記録
+    [SerializeField]
+    private float jumpHeight; //ジャンプの高さを調節
+
+    //入力キーの値を保持
+    private float ix = 0; //Horizontalキーの入力結果を保持(-1 ～ 1)
+    private float iy = 0; //Jumpキーの入力結果を保持(-1 ～ 1)
 
     //接地判定(プレイヤー側の読み込み)
     public groundcheck ground;
     private bool isGround = false;
+
+    //頭上判定(プレイヤー側の読み込み)
+    public groundcheck head;
+    private bool isHead = false;
+
 
 
     // Start is called before the first frame update
@@ -35,22 +47,39 @@ public class moveUnitychan : MonoBehaviour
     {
         //接地判定を得る
         isGround = ground.IsGround();
+        isHead = head.IsGround();
 
         ix = Input.GetAxis("Horizontal");
         iy = Input.GetAxis("Jump");
         float xspeed = runspeed;
+        float yspeed = -gravity; //縦軸の速度も自由に変更
 
         if (isGround)//接地しているとき
         {
             jumpflag = false;
-            anim.SetBool("jump", false);
             if (iy > 0)//Jumpキーが押されたとき
             {
-                anim.SetBool("jump",true);
-                rb.AddForce(transform.up * jumpforce); //transform.upは長さ１の上方向ベクトル（transform.up = (0,1,0) ）
+                yspeed = jumpspeed;
+                jumpPos = transform.position.y; //ジャンプした位置（y軸）を記録
                 jumpflag = true;
             }
+            else
+            {
+                jumpflag = false;
+            }
         }
+        else if (jumpflag) //接地していないとき（ジャンプしているとき）
+        {
+            //Jumpキーtrueかつ、頭ぶつけていないかつ、高さ制限以下でジャンプ継続
+            if (iy > 0 && jumpHeight > transform.position.y - jumpPos && !isHead)
+            {
+                yspeed = jumpspeed;
+            }
+            else
+            {
+                jumpflag = false;
+            }
+        } 
 
         if (ix != 0) //移動中
         {
@@ -80,6 +109,8 @@ public class moveUnitychan : MonoBehaviour
             anim.SetBool("run", false);
             xspeed = 0.0f;
         }
-        rb.velocity = new Vector2(xspeed, rb.velocity.y); //行動
+        anim.SetBool("jump",jumpflag);
+        anim.SetBool("ground", isGround);
+        rb.velocity = new Vector2(xspeed, yspeed); //行動
     }
 }

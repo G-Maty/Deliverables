@@ -64,7 +64,7 @@ public class itemManager : MonoBehaviour
             if(itemnum > 0)
             {
                 itemnum--;
-                itemnumgui.text = itemnum.ToString();
+                itemnumgui.text = "Žc‚è" + itemnum.ToString() + "‚Â";
                 if(itemnum == 0)
                 {
                     goalflag = true;
