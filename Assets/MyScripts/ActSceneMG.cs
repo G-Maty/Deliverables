@@ -13,9 +13,6 @@ public class ActSceneMG : MonoBehaviour
     private TextMeshProUGUI startCount;
     public static bool startflag = false;
 
-    [SerializeField]
-    private GameObject player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +37,7 @@ public class ActSceneMG : MonoBehaviour
 
             if (timer < 0)
             {
-                startflag = false;
+                //startflag = false;
                 FadeManager.Instance.LoadScene("GameOverScene", 0.3f);
             }
         }

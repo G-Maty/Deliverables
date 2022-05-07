@@ -71,7 +71,7 @@ public class moveUnitychan : MonoBehaviour
         else if (jumpflag) //接地していないとき（ジャンプしているとき）
         {
             //Jumpキーtrueかつ、頭ぶつけていないかつ、高さ制限以下でジャンプ継続
-            if (iy > 0 && jumpHeight > transform.position.y - jumpPos && !isHead)
+            if (iy > 0 && jumpHeight + jumpPos > transform.position.y && !isHead)
             {
                 yspeed = jumpspeed;
             }
