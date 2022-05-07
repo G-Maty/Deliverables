@@ -37,7 +37,7 @@ public class ActSceneMG : MonoBehaviour
 
             if (timer < 0)
             {
-                //startflag = false;
+                startflag = false;
                 FadeManager.Instance.LoadScene("GameOverScene", 0.3f);
             }
         }
