@@ -14,7 +14,7 @@ public class ActSceneMG : MonoBehaviour
     void Start()
     {
         timer = rouletteManager.timelimit;
-        timeUI.text = timer.ToString();
+        timeUI.text = "Žc‚èŽžŠÔ" + timer.ToString("0") + "•b";
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class ActSceneMG : MonoBehaviour
         if (timer >= 0)
         {
             // •¶Žš—ñ‚É•ÏŠ·‚µ‚Ä•\Ž¦
-            timeUI.text = timer.ToString("0");
+            timeUI.text = "Žc‚èŽžŠÔ" + timer.ToString("0") + "•b";
         }
 
         if(timer < 0)

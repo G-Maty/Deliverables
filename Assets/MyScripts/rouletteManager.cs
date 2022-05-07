@@ -82,24 +82,21 @@ public class rouletteManager : MonoBehaviour
         if (stop1 == 0 && rot1flag == true)
         {
             angl1 = roulette1.transform.eulerAngles.z;
+            roulette1.transform.Rotate(0, 0, 0);
             if (angl1 >= 0 && angl1 < 90)
             {
-                Debug.Log("cherry");
                 fruitname = "cherry";
             }
             else if (angl1 >= 90 && angl1 < 180)
             {
-                Debug.Log("banana");
                 fruitname = "banana";
             }
             else if (angl1 >= 180 && angl1 < 270)
             {
-                Debug.Log("apple");
                 fruitname = "apple";
             }
             else
             {
-                Debug.Log("grape");
                 fruitname = "grape";
             }
         }
@@ -107,24 +104,21 @@ public class rouletteManager : MonoBehaviour
         if (stop2 == 0 && rot2flag == true)
         {
             angl2 = roulette2.transform.eulerAngles.z;
+            roulette2.transform.Rotate(0, 0, 0);
             if (angl2 >= 0 && angl2 < 90)
             {
-                Debug.Log("2");
                 amountitems = 2;
             }
             else if (angl2 >= 90 && angl2 < 180)
             {
-                Debug.Log("4");
                 amountitems = 4;
             }
             else if (angl2 >= 180 && angl2 < 270)
             {
-                Debug.Log("6");
                 amountitems = 6;
             }
             else
             {
-                Debug.Log("8");
                 amountitems = 8;
             }
         }
@@ -132,44 +126,51 @@ public class rouletteManager : MonoBehaviour
         if(stop3 == 0 && rot3flag == true)
         {
             angl3 = roulette3.transform.eulerAngles.z;
-            if(angl3 > 180 && angl3 <= 317.3)
+            roulette3.transform.Rotate(0, 0, 0);
+            if (angl3 > 180 && angl3 <= 317.3)
             {
-                Debug.Log("60s");
                 timelimit = 60f;
             }else if(angl3 > 38.5 && angl3 <= 180)
             {
-                Debug.Log("40s");
                 timelimit = 40f;
             }
             else
             {
-                Debug.Log("20s");
                 timelimit = 20f;
             }
         }
 
         if(stop1 == 0 && stop2 == 0 && stop3 == 0)
         {
-            roulette1.transform.Rotate(0, 0, 0);
-            roulette2.transform.Rotate(0, 0, 0);
-            roulette3.transform.Rotate(0, 0, 0);
             ConfirmWindow.SetActive(true);
-            amountUI.text = amountitems.ToString() + "‚Â";
+            amountUI.text = "~" + amountitems.ToString() + "‚Â";
             timeUI.text = "§ŒÀŠÔ" + timelimit.ToString() + "s";
             if (fruitname == "apple")
             {
                 appleUI.SetActive(true);
+                grapeUI.SetActive(false);
+                bananaUI.SetActive(false);
+                cherryUI.SetActive(false);
             }
             else if (fruitname == "grape")
             {
+                appleUI.SetActive(false);
                 grapeUI.SetActive(true);
+                bananaUI.SetActive(false);
+                cherryUI.SetActive(false);
             }
             else if (fruitname == "banana")
             {
+                appleUI.SetActive(false);
+                grapeUI.SetActive(false);
                 bananaUI.SetActive(true);
+                cherryUI.SetActive(false);
             }
             else
             {
+                appleUI.SetActive(false);
+                grapeUI.SetActive(false);
+                bananaUI.SetActive(false);
                 cherryUI.SetActive(true);
             }
         }

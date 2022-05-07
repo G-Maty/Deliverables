@@ -30,9 +30,10 @@ public class itemManager : MonoBehaviour
         anim = transform.root.GetComponent<Animator>();
         itemTag = rouletteManager.fruitname;
         itemnum = rouletteManager.amountitems;
-        itemnumgui.text = itemnum.ToString();
+        itemnumgui.text = "Žc‚è" + itemnum.ToString() + "‚Â";
 
-        if(itemTag == "apple")
+
+        if (itemTag == "apple")
         {
             appleUI.SetActive(true);
         }
@@ -48,12 +49,6 @@ public class itemManager : MonoBehaviour
         {
             cherryUI.SetActive(true);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,7 +69,6 @@ public class itemManager : MonoBehaviour
 
         if(collision.tag == "Finish" && goalflag == true)
         {
-            Debug.Log("ƒNƒŠƒA");
             anim.SetBool("finish", true);
             FadeManager.Instance.LoadScene("ClearScene", 0.3f);
         }
