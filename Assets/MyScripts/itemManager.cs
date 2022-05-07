@@ -62,6 +62,7 @@ public class itemManager : MonoBehaviour
                 itemnumgui.text = "残り" + itemnum.ToString() + "つ";
                 if(itemnum == 0)
                 {
+                    itemnumgui.text = "ジャックを探す";
                     goalflag = true;
                 }
             }
@@ -69,9 +70,16 @@ public class itemManager : MonoBehaviour
 
         if(collision.tag == "Finish" && goalflag == true)
         {
-            anim.SetBool("finish", true);
-            FadeManager.Instance.LoadScene("ClearScene", 0.3f);
+            StartCoroutine(finish());
         }
 
+    }
+
+    IEnumerator finish()
+    {
+        ActSceneMG.startflag = false;
+        anim.SetBool("finish", true);
+        yield return new WaitForSeconds(2.0f);
+        FadeManager.Instance.LoadScene("ClearScene", 0.3f);
     }
 }

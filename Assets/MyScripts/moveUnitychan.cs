@@ -111,6 +111,9 @@ public class moveUnitychan : MonoBehaviour
         }
         anim.SetBool("jump",jumpflag);
         anim.SetBool("ground", isGround);
-        rb.velocity = new Vector2(xspeed, yspeed); //行動
+        if (ActSceneMG.startflag) //ゲーム開始中なら
+        {
+            rb.velocity = new Vector2(xspeed, yspeed); //行動
+        }
     }
 }
