@@ -115,5 +115,9 @@ public class moveUnitychan : MonoBehaviour
         {
             rb.velocity = new Vector2(xspeed, yspeed); //çsìÆ
         }
+        else
+        {
+            rb.velocity = new Vector2(0, 0); //çsìÆêßå¿
+        }
     }
 }
